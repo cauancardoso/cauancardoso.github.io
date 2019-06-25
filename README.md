@@ -1,93 +1,156 @@
-# The Minimal theme
+# Tranquilpeak
 
-[![Build Status](https://travis-ci.org/pages-themes/minimal.svg?branch=master)](https://travis-ci.org/pages-themes/minimal) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimal.svg)](https://badge.fury.io/rb/jekyll-theme-minimal)
+[![Twitter Follow](https://img.shields.io/twitter/follow/thibaudlepretre.svg?style=social&label=%40thibaudlepretre)](https://twitter.com/intent/follow?screen_name=thibaudlepretre)
 
-*Minimal is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/minimal), or even [use it today](#usage).*
+A gorgeous responsive theme for Hugo blog framework.
 
-![Thumbnail of minimal](thumbnail.png)
+![Tranquilpeak](https://raw.githubusercontent.com/kakawait/hugo-tranquilpeak-theme/master/showcase.png)
 
-## Usage
+## Alpha/Beta versions
 
-To use the Minimal theme:
+**ATTENTION** during *alpha* or *beta* [versions](https://github.com/kakawait/hugo-tranquilpeak-theme/milestones) breaking changes are possible on config file.
 
-1. Add the following to your site's `_config.yml`:
+You can track [breaking changes label](https://github.com/kakawait/hugo-tranquilpeak-theme/issues?q=is%3Aissue+is%3Aopen+label%3A%22breaking+changes%22).
 
-    ```yml
-    theme: jekyll-theme-minimal
-    ```
+How can I migrate my current version? Please read [CHANGELOG.md](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/CHANGELOG.md).
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+## Credits
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+*Hugo* version of Tranquilpeak is a based on original *Hexo* version https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak. This version is simply a port to *Hugo* static site generator.
 
+Please all the credit should be attributed to [original *Hexo* version](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak) and its author [Louis Barranqueiro](https://github.com/LouisBarranqueiro).
 
+*Hugo* version keeps every `.js` and `.css` files untouched from original *Hexo* version in order to enjoy future original *Hexo* version updates or features!
 
-## Customizing
+## Summary
 
-### Configuration variables
+- [General](#general)
+- [Features](#features)
+- [Quick start](#quick-start)
+- [Demo](#demo)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Showcase](#showcase)
+- [License](#license)
 
-Minimal will respect the following variables, if set in your site's `_config.yml`:
+## General
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+- **Authors**: [Louis Barranqueiro (LouisBarranqueiro)](https://github.com/LouisBarranqueiro) and [Thibaud Leprêtre (kakawait)](https://github.com/kakawait)
+- **Version**: 0.4.4-BETA (based on Hexo version 1.10.0)
+- **Compatibility**: Hugo v0.20.1
+
+## Features
+
+**General features:**
+
+- Fully responsive
+- Optimized for tablets & mobiles
+- Configurable menu of the sidebar
+- Pages to filter tags, categories and archives
+- Background cover image
+- Beautiful about page
+- Support Open Graph protocol
+- Easily customizable (fonts, colors, layout elements, code coloration, etc..)
+- Support internationalization (i18)
+
+**Posts features:**
+
+- Thumbnail image
+- Cover image
+- Responsive videos & images
+- Sharing options
+- Navigation menu
+- GitHub theme for code highlighting (customizable)
+- Image gallery
+- Tags for images (FancyBox), wide images, tabbed code blocks, highlighted text, alerts
+- Table of contents
+
+**Integrated services:**
+
+- Disqus
+- Google analytics
+- Gravatar
+- Facebook Insights
+
+### Missing features from original *Hexo* version
+
+- [ ] Baidu analytics
+- [ ] Algolia (https://github.com/kakawait/hugo-tranquilpeak-theme/issues/8)
+- [ ] Pagination customization `tagPagination`, `categoryPagination` and `archivePagination` (https://github.com/kakawait/hugo-tranquilpeak-theme/issues/17)
+
+**ATTENTION** following features will not be possible due to *Hugo* limitations
+
+- Archives pages by years `/archives/2015`
+- Archives pages by month `/archives/2015/01`
+
+## Quick start
+
+**Please read [user documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md), it's short and useful to discover all features and possibilities of the theme, especially the  [writing posts](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#writing-posts) section**
+
+### For people who want to use the original version of Tranquilpeak without modifications (users)
+
+Go to the directory where you have your Hugo site and run:
+
+```shell
+mkdir themes
+cd themes
+git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
 ```
 
-Additionally, you may choose to set the following optional variables:
+After installing the Tranquilpeak theme successfully, we recommend you to take a look at the [exampleSite](exampleSite) directory. You will find a working Hugo site configured with the Universal theme that you can use as a starting point for your site.
 
-```yml
-logo: [Location of the logo]
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+First, let's take a look at the [config.toml](exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
 
-### Stylesheet
+More information on [user documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md) to install and configure the theme
 
-If you'd like to add your own custom styles:
+### For people who want to create their own version of tranquilpeak (developers)
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+1. Run `git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git`
+2. Follow [developer documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/developer.md) to edit and build the theme
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+## Demo
 
-### Layouts
+Check out Tranquilpeak theme in live : [hugo-tranquilpeak-theme demo](https://tranquilpeak.kakawait.com)
 
-If you'd like to change the theme's HTML layout:
+## Showcase
 
-1. [Copy the original template](https://github.com/pages-themes/minimal/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+Checkout showcase https://tranquilpeak.kakawait.com/2015/06/who-is-using-tranquilpeak-hugo-theme/
 
-## Roadmap
+### How can I add my site to the showcase
 
-See the [open issues](https://github.com/pages-themes/minimal/issues) for a list of proposed features (and known issues).
+**Click [here](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/new?title=Add%20my%20blog%20into%20the%20showcase&body=Hey,%20add%20my%20blog%20into%20the%20showcase:) to add your blog into the showcase.**
 
-## Project philosophy
+Please fill the following information:
 
-The Minimal theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+1. public url
+2. name (optional)
+3. description (optional)
+
+## Documentation
+
+If it's your first time using Hugo, please check [Hugo official documentation](https://gohugo.io/overview/introduction/)
+
+### For users
+
+To install and configure the theme, consult the following documentation : [user documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md)
+
+### For developers
+
+To understand the code, the workflow and edit the theme, consult the following documentation : [developer documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/developer.md)
 
 ## Contributing
 
-Interested in contributing to Minimal? We'd love your help. Minimal is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
-### Previewing the theme locally
+Read [guidelines for contributing](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/.github/CONTRIBUTING.md) for more information.
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+As explained on [Credits](#credits):
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/minimal`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+> *Hugo* version keeps every `.js` and `.css` files untouched from original *Hexo* version in order to enjoy future original *Hexo* version updates or features!
 
-### Running tests
+That mean I would keep a strong dependency with original *Hexo* theme. Thus if you want to suggest any modifications on `.css` or `.js` files **I will submit those changes to original *Hexo* theme** (except if it's really specific to *Hugo* bugs that is not present on *Hexo*).
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
+## License
+
+hugo-tranquilpeak-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/LICENSE).
+

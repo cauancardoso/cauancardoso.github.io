@@ -3,7 +3,7 @@ layout: page
 title: About me
 ---
 
-My name is Cauan Braga da Silva Cardoso. I was born in Brasilia/DF, Brazil and I currently live between Brasilia and Rio de Janeiro. I am a Statistician and a Data Scientist.
+My name is Cauan Braga da Silva Cardoso. I am a Statistician and a Data Scientist. I was born in Brasilia/DF, Brazil and I currently live between Brasilia and Rio de Janeiro.
 
 ### Academic History
 
@@ -16,3 +16,7 @@ I have been working as a Short-Term Consultant at the World Bank Group since 201
 ### Interests
 
 Statistical analysis, data visualization, machine learning, big data, R, Python, SAS, SQL.
+
+### Hobbies
+
+Guitar, saxophone, dancing, exercising

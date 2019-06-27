@@ -2,7 +2,7 @@
 layout: post
 title: Love Story
 subtitle: for Carolina
-image: /img/Cauan_Carolina-98.jpg
+bigimg: /img/Cauan_Carolina-98.jpg
 tags: [poetry]
 ---
 

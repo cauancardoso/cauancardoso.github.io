@@ -1,7 +1,7 @@
 # --- General options --- #
 
 # Name of website
-title: Cauan Cardoso website
+title: Home
 
 # Short description of your site
 description: Statistician and Data Scientist
@@ -21,10 +21,11 @@ description: Statistician and Data Scientist
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-#  Author's home: "http://deanattali.com"
+  Publications: "publications"
+#  Resources:
+#    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+#    - Learn markdown: "http://www.markdowntutorial.com/"
+#  Author's home: "http://example.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar

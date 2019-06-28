@@ -22,6 +22,7 @@ description: Cauan Cardoso personal website
 navbar-links:
   About Me: "aboutme"
   Publications: "publications"
+  Awards: "awards"
 #  Resources:
 #    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
 #    - Learn markdown: "http://www.markdowntutorial.com/"

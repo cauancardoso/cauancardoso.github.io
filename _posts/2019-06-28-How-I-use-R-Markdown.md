@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Test markdown
-subtitle: Each post also has a subtitle
+title: Using R Markdown in my day to day
+subtitle: Financial statements of my condominium
 gh-repo: cauancardoso/cauancardoso.github.io
 gh-badge: [star, fork, follow]
-tags: [test]
+tags: [R, R Markdown]
 comments: true
 ---
 

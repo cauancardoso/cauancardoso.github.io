@@ -23,3 +23,5 @@ since love made his first debut.
 A mere infatuation hence became  
 a more resolute, stronger tissue  
 bonding two hearts hard to tame!  
+
+Photo: [Rafael Ohana](https://www.rafaelohana.com/home)

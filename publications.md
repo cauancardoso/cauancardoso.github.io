@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications
+title: Bibliographical Production
 ---
 
 ### Articles in Scientific Journals

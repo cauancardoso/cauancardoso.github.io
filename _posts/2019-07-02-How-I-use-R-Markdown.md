@@ -21,12 +21,18 @@ I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my 
 If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).  
 {: .box-warning}
 
+To generate the pdf document, my YAML header looks something like this
+
 ```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+title: "Condomínio Monte Verde"
+shorttitle: "Relatório de despesas do Condomínio"
+date: "`r paste('Mês de referência:',format(Sys.Date(),'%B/%Y'),sep = ' ')`"
+lang: "pt-BR"
+output:
+  pdf_document: default
+sansfont: Calibri Light
 ```
+The ```date: "`r paste('Mês de referência:',format(Sys.Date(),'%B/%Y'),sep = ' ')`"``` will create a relative date: as the pdf document is always generated in the month of reference  The ```lang: "pt-BR ``` will translate the document into Portuguese. This will be useful to translate the table caption "Table 1" to "Tabela 1". 
 
 **Here is some bold text**
 

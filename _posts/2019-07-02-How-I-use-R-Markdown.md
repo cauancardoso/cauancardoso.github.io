@@ -12,8 +12,10 @@ This year, I've been responsible for the monthly financial report of the condomi
 
 First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335.
 
-> **R version:** 3.6.0  
-> **R Studio version:** 1.2.1335  
+**R version:** 3.6.0  
+{: .box-note}
+**R Studio version:** 1.2.1335  
+{: .box-note}
 
 I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
 

@@ -12,12 +12,12 @@ This year, I've been responsible for the monthly financial report of the condomi
 
 First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335.
 
-{: .box-note} **R version:** 3.6.0  
-{: .box-note} **R Studio version:** 1.2.1335  
+> **R version:** 3.6.0  
+> **R Studio version:** 1.2.1335  
 
-I am also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
-{: .box-warning}
-If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).
+I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
+
+{: .box-warning} If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).
 
 ```javascript
 var foo = function(x) {

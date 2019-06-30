@@ -1,14 +1,30 @@
 ---
 layout: post
 title: Using R Markdown in my day to day
-subtitle: Financial statements of my condominium
+subtitle: Financial report of my condominium
 gh-repo: cauancardoso/cauancardoso.github.io
 gh-badge: [star, fork, follow]
 tags: [R, R Markdown]
 comments: true
 ---
 
-You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+This year, I've been responsible for the monthly financial report of the condominium where I live in Brasilia. Here I will show how I've automated this task using [**R Markdown**](https://rmarkdown.rstudio.com/) and [**R Studio**](https://www.rstudio.com/).
+
+First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335.
+
+{: .box-note} **R version:** 3.6.0  
+{: .box-note} **R Studio version:** 1.2.1335  
+
+I am also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
+{: .box-warning}
+If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).
+
+```javascript
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+```
 
 **Here is some bold text**
 

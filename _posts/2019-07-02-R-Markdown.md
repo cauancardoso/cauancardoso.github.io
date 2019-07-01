@@ -21,14 +21,28 @@ I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my 
 If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).  
 {: .box-warning}
 
-The packages used 
-To generate the pdf document, my YAML header looks something like this
+My YAML header looks something like this
 
 ```javascript
-title: "Condomínio XXXXX"
+title: "Demonstração das Despesas do Condomínio"
 lang: "pt-BR"
 output:
   pdf_document: default
 sansfont: Calibri Light
 ```
-The ```lang: "pt-BR ``` will translate the document into Portuguese. This will be useful to translate the table caption (using kable) "Table 1" and "Table 2" to "Tabela 1" and "Tabela 2", respectively. 
+The ```lang: "pt-BR ``` will translate the document into Portuguese. This will be useful to translate the table caption (using kable) "Table 1" and "Table 2" to "Tabela 1" and "Tabela 2", respectively. If you want to translate into other language, use a valid IETF language tags ([see the Pandoc Manual for more details on this](https://pandoc.org/MANUAL.html#language-variables))
+
+The first chunk has the libraries used
+
+```javascript
+{r libraries, include=FALSE}
+
+library(data.table)
+library(tidyr)
+library(dplyr)
+library(lubridate)
+library(knitr)
+library(kableExtra)
+
+```
+The second chunk has the datasets 

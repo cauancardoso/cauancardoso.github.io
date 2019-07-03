@@ -98,7 +98,7 @@ The ``` `r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")` ``
 
 This is the result I get in my document:
 
-![example of line break using the codes above](img/Example_linebreak.png)
+![example of line break using the codes above](/img/Example_linebreak.png)
 
 The last two chunks are the tables created for this document using the [```kableExtra``` package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). As I don't know how to break a line in the footnote, I make each line as a different footnote to achieve the expected result.
 

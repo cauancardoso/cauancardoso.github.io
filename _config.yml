@@ -21,7 +21,7 @@ description: Cauan Cardoso personal website
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  My Production:
+  Production:
     - Bibliographical Production: "publications"
     - Awards: "awards"
   CV: "http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4388692P1&idiomaExibicao=2"

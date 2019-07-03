@@ -98,9 +98,9 @@ The ``` `r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")` ``
 
 This is the result I get in my document:
 
-![example of line break using the codes above](https://github.com/cauancardoso/cauancardoso.github.io/blob/master/img/Example_linebreak.png)
+![example of line break using the codes above](img/Example_linebreak.png)
 
-The last two chunks are the tables created for this document using the [```kableExtra``` package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
+The last two chunks are the tables created for this document using the [```kableExtra``` package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). As I don't know how to break a line in the footnote, I make each line as a different footnote to achieve the expected result.
 
 ```javascript
 {r tabela_1, echo=FALSE}
@@ -122,26 +122,27 @@ kable(cond_mes, format = "latex", booktabs = T,
 {r tabela_2, echo=FALSE}
 kable(cond_mes_ap, format = "latex", booktabs = T, 
       caption = paste0("Valor a ser pago do condomínio referente ao mês de ",
-      format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),", por apartamento")) %>%
+                       format(seq.Date(Sys.Date(), 
+                                       length=2, 
+                                       by='-1 month')[2],
+                              "%B/%Y"),
+                       ", por apartamento")
+       ) %>%
   kable_styling(latex_options = c("hold_position","striped"), full_width = F) %>%
   footnote(general = c("A diferença em centavos varia mês a mês e é utilizada", 
            "para verificação e aprovação dos depósitos em conta."),
            general_title = "Nota:")
 
 ```
-Last but not least, I put the due date, including day of the month and weekday. I've made some mistakes before automating this, but now I always get it right using this code:
+Last but not least, I put the due date (which is every 10th of the month) and the respective weekday. I've made some mistakes before I automated this, but now I always get it right using this two lines of code:
+
 ```javascript
 paste("10", format(Sys.Date(), "%m"), sep = "/") # due date
-weekdays(seq.Date(Sys.Date(), length=2, by='9 days')[2]) # due date weekday
-```
-As I always generate the document every first day of the month, the weekday and due date always match. If I wanted the weekday independent of my ```Sys.Date()```, I could do this somewhat more complex line of code:
-
-```javascript
 weekdays(
-          as.Date(
-                  paste("10", 
-                        format(seq.Date(Sys.Date(), length=2, by='1 month')[2],"%m/%y"), 
-                        sep = "/"), format = "%d/%m/%y"))
+         as.Date(
+                 paste("10", format(Sys.Date(), "%m/%y"), 
+                       sep = "/"), 
+                 format = "%d/%m/%y")
+         ) # due date weekday
 ```
-
 And that's about it! [Check it out in my repository to see more details](https://github.com/cauancardoso/Condominio) and [click here to see the final document!](https://github.com/cauancardoso/Condominio/blob/master/Condominio_mes.pdf).

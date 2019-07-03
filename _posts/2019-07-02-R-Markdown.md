@@ -79,7 +79,10 @@ The text of the document below the title is written under this model
 Prezados,
 
 \vspace*{1\baselineskip} 
-Lorem ipsum bibendum arcu quis tempor neque aenean sapien id, mauris sed nec dapibus a platea nunc taciti, porttitor lobortis aptent duis interdum curae et ipsum. aptent ligula gravida tempus curabitur justo cubilia quis scelerisque euismod consectetur consequat, taciti quisque bibendum semper sed ornare aenean pulvinar pretium
+Solicita-se a todos os condôminos/moradores o depósito em **conta poupança** 
+(banco: **XXX**; titular: **XXX**; CPF: **XXX**; agência: **XXX**; 
+conta poupança: **XXX**) para pagamento das despesas do condomínio referentes 
+ao mês de **`r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")`**, conforme as tabelas 1 e 2.
 
 ```
 
@@ -91,13 +94,21 @@ The ``` `r format(Sys.Date(), "%d de %B de %Y")` ``` automatically generates the
 
 The ```\vspace*{1\baselineskip}``` skips one extra line between the salutation and the date and between the salutation and the rest of the document.
 
+The ``` `r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")` ``` automatically generates the reference month (that is always the month before) of the financial report.
+
+This is the result I get in my document:
+
+![example of line break using the codes above](https://github.com/cauancardoso/cauancardoso.github.io/blob/master/img/Example_linebreak.png)
+
 The last two chunks are the tables created for this document using the [```kableExtra``` package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
 
 ```javascript
 {r tabela_1, echo=FALSE}
 
 kable(cond_mes, format = "latex", booktabs = T,
-      caption = paste("Demonstração das despesas do condomínio referente ao mês de",format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),sep = " ")) %>%
+      caption = paste("Demonstração das despesas do condomínio referente ao mês de",
+      format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),
+      sep = " ")) %>%
   kable_styling(latex_options = "hold_position", full_width = F) %>%
   pack_rows("Manutenção predial", 1, 4) %>%
   pack_rows("Caixa", 5, 5) %>%
@@ -109,11 +120,28 @@ kable(cond_mes, format = "latex", booktabs = T,
 
 ```javascript
 {r tabela_2, echo=FALSE}
-kable(cond_mes_ap, format = "latex", booktabs = T, caption = paste0("Valor a ser pago do condomínio referente ao mês de ",format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),", por apartamento")) %>%
+kable(cond_mes_ap, format = "latex", booktabs = T, 
+      caption = paste0("Valor a ser pago do condomínio referente ao mês de ",
+      format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),", por apartamento")) %>%
   kable_styling(latex_options = c("hold_position","striped"), full_width = F) %>%
-  footnote(general = c("A diferença em centavos varia mês a mês e é utilizada", "para verificação e aprovação dos depósitos em conta."),
+  footnote(general = c("A diferença em centavos varia mês a mês e é utilizada", 
+           "para verificação e aprovação dos depósitos em conta."),
            general_title = "Nota:")
 
 ```
+Last but not least, I put the due date, including day of the month and weekday. I've made some mistakes before automating this, but now I always get it right using this code:
+```javascript
+paste("10", format(Sys.Date(), "%m"), sep = "/") # due date
+weekdays(seq.Date(Sys.Date(), length=2, by='9 days')[2]) # due date weekday
+```
+As I always generate the document every first day of the month, the weekday and due date always match. If I wanted the weekday independent of my ```Sys.Date()```, I could do this somewhat more complex line of code:
 
-And that's about it! [Check it out in my repository to see more details](https://github.com/cauancardoso/Condominio).
+```javascript
+weekdays(
+          as.Date(
+                  paste("10", 
+                        format(seq.Date(Sys.Date(), length=2, by='1 month')[2],"%m/%y"), 
+                        sep = "/"), format = "%d/%m/%y"))
+```
+
+And that's about it! [Check it out in my repository to see more details](https://github.com/cauancardoso/Condominio) and [click here to see the final document!](https://github.com/cauancardoso/Condominio/blob/master/Condominio_mes.pdf).

@@ -45,7 +45,7 @@ library(knitr)
 library(kableExtra)
 
 ```
-The second chunk has the R objects that will be visualized using the [kableExtra package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). More details on them could be found in [my repository](https://github.com/cauancardoso/Condominio/blob/master/Condominio_script.R). It also creates two new objects: ```cent_sort``` (a vector randomly sorted) and ```cond_mes_ap``` (a row-wise [tibble](https://tibble.tidyverse.org/)).
+The second chunk has the R objects that will be visualized using the [kableExtra package](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). More details on them could be found in [my repository](https://github.com/cauancardoso/Condominio/blob/master/Condominio_script.R). It also creates two new objects: ```cent_sort``` (a vector randomly sorted) and ```cond_mes_ap``` (a row-wise [tibble](https://tibble.tidyverse.org/)).
 
 ```javascript
 {r datasets, include=FALSE}
@@ -100,7 +100,7 @@ This is the result I get in my document:
 
 ![example of line break using the codes above](/img/Example_linebreak.png)
 
-The last two chunks are the tables created for this document using the [kableExtra package] (https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). As I don't know how to break a line in the footnote, I make each line as a different footnote to achieve the expected result.
+The last two chunks are the tables created for this document using the [kableExtra package](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). As I don't know how to break a line in the footnote, I make each line as a different footnote to achieve the expected result.
 
 ```javascript
 {r tabela_1, echo=FALSE}

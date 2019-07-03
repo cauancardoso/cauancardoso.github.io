@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automating boring stuff with R Markdown
+title: Automate the boring stuff using R Markdown
 subtitle: Financial report of my condominium
 gh-repo: cauancardoso/cauancardoso.github.io
 gh-badge: [star, fork, follow]

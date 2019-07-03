@@ -13,7 +13,7 @@ I am a PhD candidate in Population, Territory and Public Statistics at the Brazi
 
 ### Professional History
 
-I have been working as a Short-Term Consultant at the World Bank Group since 2018. Before that, I worked for the Brazilian Institute of Economic Research between 2015 and 2018. Also, during my undergraduate years, I was an intern at the Center of Technologic Development of the UnB in 2012 and at the Youth Observatory of the UnB in 2013.
+I have been working as a Short-Term Consultant at the World Bank Group since 2018. Before that, I worked for the Brazilian Institute of Applied Economic Research (Ipea) between 2015 and 2018. Also, during my undergraduate years, I was an intern at the Center of Technologic Development of the UnB (CDT/UnB) in 2012 and at the Youth Observatory of the UnB (OJ/UnB) in 2013.
 
 ### Interests
 

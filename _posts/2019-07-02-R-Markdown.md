@@ -30,7 +30,7 @@ output:
   pdf_document: default
 sansfont: Calibri Light
 ```
-I use ```lang: "pt-BR ``` because I'm writing this document in Portuguese. This will be useful to translate the table caption (using [```kable``` function](https://www.rdocumentation.org/packages/knitr/versions/1.23/topics/kable)) into Portuguese. So, instead of "Table 1 - *text in Portuguese*", what I will have is "Tabela 1 - *text in Portuguese*". If you want to translate into another language, use a valid IETF language tags ([see the Pandoc Manual for more details on this](https://pandoc.org/MANUAL.html#language-variables)).
+I use ```lang: "pt-BR ``` because I'm writing this document in Portuguese. This will be useful to translate the table caption (using [kable function](https://www.rdocumentation.org/packages/knitr/versions/1.23/topics/kable)) into Portuguese. So, instead of "Table 1 - *text in Portuguese*", what I will have is "Tabela 1 - *text in Portuguese*". If you want to translate into another language, use a valid IETF language tags ([see the Pandoc Manual for more details on this](https://pandoc.org/MANUAL.html#language-variables)).
 
 The first chunk has the libraries used
 

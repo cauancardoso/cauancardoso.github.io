@@ -10,16 +10,12 @@ comments: true
 
 This year, I've been responsible for the monthly financial report of the condominium where I live in Brasilia, which is a small condominium with eight units, including mine. Here I will show how I've automated this task using [**R Markdown**](https://rmarkdown.rstudio.com/) and [**R Studio**](https://www.rstudio.com/).
 
-First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335.
+First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335. I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
 
 **R version:** 3.6.0  
-**R Studio version:** 1.2.1335  
+**R Studio version:** 1.2.1335 
+**Basic Miktex:** 2.9
 {: .box-note}
-
-I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
-
-If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).  
-{: .box-warning}
 
 This is my YAML header:
 
@@ -146,3 +142,6 @@ weekdays(
          ) # due date weekday
 ```
 And that's about it! [Check it out in my repository to see more details](https://github.com/cauancardoso/Condominio) and [click here to see the final document!](https://github.com/cauancardoso/Condominio/blob/master/Condominio_mes.pdf).
+
+If you're experiencing trouble generating PDF documents in R Markdown using Miktex, [maybe this solution will work for you](https://tex.stackexchange.com/questions/27138/how-can-i-fix-the-error-gui-framework-cannot-be-initialized-with-texniccenter).  
+{: .box-warning}

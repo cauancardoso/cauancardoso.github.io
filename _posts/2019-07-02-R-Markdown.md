@@ -8,7 +8,7 @@ tags: [R, R Markdown]
 comments: true
 ---
 
-This year, I've been responsible for the monthly financial report of the condominium where I live in Brasilia, which is a small condominium with eight units, including mine. Here I will show how I've automated this task using [**R Markdown**](https://rmarkdown.rstudio.com/) and [**R Studio**](https://www.rstudio.com/).
+This year, I've been responsible for the monthly financial report of the condominium where I live in Brasilia, which is a small condominium with eight units, including mine. Here I will show how I've automated this task using [R Markdown](https://rmarkdown.rstudio.com/) and [R Studio](https://www.rstudio.com/).
 
 First things first, I'm using R version 3.6.0 and R Studio version 1.2.1335. I'm also using [Basic Miktex](https://miktex.org/) (version 2.9) to generate my PDF documents. 
 

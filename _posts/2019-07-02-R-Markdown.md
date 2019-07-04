@@ -76,9 +76,10 @@ Prezados,
 
 \vspace*{1\baselineskip} 
 Solicita-se a todos os condôminos/moradores o depósito em **conta poupança** 
-(banco: **XXX**; titular: **XXX**; CPF: **XXX**; agência: **XXX**; 
-conta poupança: **XXX**) para pagamento das despesas do condomínio referentes 
-ao mês de **`r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")`**, conforme as tabelas 1 e 2.
+(banco: **XXX**; titular: **XXX**; CPF: **XXX**; agência: **XXX**; conta 
+poupança: **XXX**) para pagamento das despesas do condomínio referentes ao mês 
+de **`r format(seq.Date(Sys.Date(), length=2, by='-1 month')[2], "%B/%y")`**,
+conforme as tabelas 1 e 2.
 
 ```
 
@@ -102,9 +103,11 @@ The last two chunks are the tables created for this document using the [kableExt
 {r tabela_1, echo=FALSE}
 
 kable(cond_mes, format = "latex", booktabs = T,
-      caption = paste("Demonstração das despesas do condomínio referente ao mês de",
+      caption = paste(
+      "Demonstração das despesas do condomínio referente ao mês de",
       format(seq.Date(Sys.Date(), length=2, by='-1 month')[2],"%B/%Y"),
-      sep = " ")) %>%
+                      sep = " ")
+                      ) %>%
   kable_styling(latex_options = "hold_position", full_width = F) %>%
   pack_rows("Manutenção predial", 1, 4) %>%
   pack_rows("Caixa", 5, 5) %>%

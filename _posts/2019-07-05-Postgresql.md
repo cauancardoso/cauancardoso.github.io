@@ -35,6 +35,10 @@ And so on up to ```v76``` in ```rais_2015``` table...
 ```javascript
 ALTER TABLE rais_2016
 RENAME COLUMN v3 to v3_2016;
+ALTER TABLE rais_2016
+RENAME COLUMN v4 to v4_2016;
+ALTER TABLE rais_2016
+RENAME COLUMN v5 to v5_2016;
 ```
 And so on up to ```v76``` in ```rais_2016``` table.
 
@@ -359,7 +363,7 @@ WHERE rais_2014_2016.v3_2015 = rais_2015.v3 AND
       rais_2014_2016.v75_2016 = rais_2016.v75 AND
       rais_2014_2016.v76_2016 = rais_2016.v76 AND
 ;
-
+```
 And it's done!
 
 If you want to learn more about the different ways you can JOIN tables in SQL, [see this very instructed document created by Steve Stedman](http://stevestedman.com/wp-content/uploads/TSqlJoinTypePoster1.pdf).

@@ -12,7 +12,7 @@ The **Annual Social Information Report (RAIS)** is a socioeconomic report of the
 
 The RAIS 2014 has 60 variables and more than 74 million registers; the RAIS 2015 has 76 variables and more than 72 million registers; the RAIS 2016 has 76 variables and more than 67 million registers. Each register represents a job linkage in that year.
 
-Here I will show very briefly how I've managed to join the RAIS 2014, 2015 and 2016 dataset into a single dataset using [PostgreSQL](https://www.postgresql.org/) to construct monthly employment entry and exit rates in the 2014-2016 period.
+Here I will show very briefly how I've managed to join the RAIS 2014, 2015 and 2016 datasets into a single dataset using [PostgreSQL](https://www.postgresql.org/) as a way to create monthly employment entry and exit rates in the 2014-2016 period.
 
 First things first, I used [pgAdmin III](https://www.pgadmin.org/download/) version 1.22.2 to this project.
 
@@ -369,7 +369,7 @@ WHERE rais_2014_2016.v3_2016 = rais_2016.v3 AND
 ```
 And it's done!
 
-Now I have a single table for 3 consecutive years and two columns with id variables (```v1``` and ```v2```) that I can use to merge with others datasets that also have **pis** and **cpf** variables, e.g. **Cadastro Único**, **Caged**, **Seguro Desemprego** and many others.
+Now I have a single table for 3 consecutive years and only two columns as id variables (```v1``` and ```v2```) that I can use to merge with others datasets that also have these id variables, e.g. **Cadastro Único**, **Caged**, **Seguro Desemprego** and many others Brazilian administrative registers.
 
 If you want to learn more about the different ways you can JOIN tables in SQL, [see this very instructed document created by Steve Stedman](http://stevestedman.com/wp-content/uploads/TSqlJoinTypePoster1.pdf).
 

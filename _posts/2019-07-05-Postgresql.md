@@ -19,9 +19,12 @@ First things first, I used [pgAdmin III](https://www.pgadmin.org/download/) vers
 **pgAdmin III version:** 1.22.2  
 {: .box-note}
 
-I did a FULL OUTER JOIN of the RAIS 2014-2016 tables, because I wanted to keep all the three tables registers. However, a JOIN cannot be perfomed in SQL if a variable from one table has the same column name of a variable from another. In RAIS 2014-2016 tables, variables like name, age, sex and salary have the same column names. **How to deal with that?**
+I did a FULL OUTER JOIN of the RAIS 2014-2016 tables, because I wanted to keep all the three tables registers. However, a JOIN cannot be performed in SQL if a variable from one table has the same column name of a variable from another. The 60 variables from RAIS 2014 table are also present in the RAIS 2015 and 2016 tables, hence the column names are the same. **How to deal with that?**
 
-Information about name and sex of the worker, that (hopefully) will not change over the years, can be taken from just one table. On the other hand, information about employment will change over the years and is the core of the analysis here. In that case, it will suffice change the name of the variable. I chose something that relate them to the year that information is from. So, I did something like this:
+Information about name and sex of the worker, that (hopefully) will not change over the years, can be taken from just one table. On the other hand, information about employment will change over the years and is the core of the analysis here. In that case, it will suffice change the name of the variables. I chose something that relate them to the year that information is from. So, I did something like this:
+
+For simplification purposes, I'm calling the RAIS 2015 and 2016 variables **v1**, **v2**, **v3**, ... and **v76**
+{: .box-note}
 
 ```javascript
 ALTER TABLE rais_2015
@@ -42,7 +45,7 @@ RENAME COLUMN v5 to v5_2016;
 ```
 And so on up to ```v76``` in ```rais_2016``` table.
 
-I used the ```v1``` and ```v2``` variables to match the workers from one table to another. Because these variables exists in all three tables with the same name (and I didn't rename them for reasons I'll explain later), these columns has to be selected in just one of them. So, I selected all the variables of the 2014 table (60 variables) and all the variables but cpf and pis of the 2015 and 2016 tables (74 variables each). My query looked something like this: 
+I used the ```v1``` and ```v2``` variables (which are called **pis** and **cpf**) to match the workers from one table to another. Because these variables exist in all three tables with the same name (and I didn't rename them for reasons I'll explain later), these columns can be selected in just one of them. So, I selected all the variables of the 2014 table (60 variables) and all the variables but cpf and pis of the 2015 and 2016 tables (74 variables each). My query looked something like this: 
 
 ```javascript
 SELECT rais_2014.*,
@@ -286,9 +289,9 @@ WHERE rais_2014_2016.v3_2015 = rais_2015.v3 AND
       rais_2014_2016.v76_2015 = rais_2015.v76
 ;
 UPDATE rais_2014_2016
-SET v1 = rais_2015.v1, v2 = rais_2015.v2
-FROM rais_2015
-WHERE rais_2014_2016.v3_2015 = rais_2015.v3 AND
+SET v1 = rais_2016.v1, v2 = rais_2016.v2
+FROM rais_2016
+WHERE rais_2014_2016.v3_2016 = rais_2016.v3 AND
       rais_2014_2016.v4_2016 = rais_2016.v4 AND
       rais_2014_2016.v5_2016 = rais_2016.v5 AND
       rais_2014_2016.v6_2016 = rais_2016.v6 AND
@@ -366,4 +369,7 @@ WHERE rais_2014_2016.v3_2015 = rais_2015.v3 AND
 ```
 And it's done!
 
+Now I have a single table for 3 consecutive years and two columns with id variables (```v1``` and ```v2```) that I can use to merge with others datasets that also have **pis** and **cpf** variables, e.g. **Cadastro Único**, **Caged**, **Seguro Desemprego** and many others.
+
 If you want to learn more about the different ways you can JOIN tables in SQL, [see this very instructed document created by Steve Stedman](http://stevestedman.com/wp-content/uploads/TSqlJoinTypePoster1.pdf).
+

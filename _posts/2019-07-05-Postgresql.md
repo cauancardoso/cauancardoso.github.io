@@ -45,7 +45,7 @@ RENAME COLUMN v5 to v5_2016;
 ```
 And so on up to ```v76``` in ```rais_2016``` table.
 
-I used the ```v1``` and ```v2``` variables (which are called **pis** and **cpf**) to match the workers from one table to another. Because these variables exist in all three tables with the same name (and I didn't rename them for reasons I'll explain later), these columns can be selected in just one of them. So, I selected all the variables of the 2014 table (60 variables) and all the variables but cpf and pis of the 2015 and 2016 tables (74 variables each). My query looked something like this: 
+I used the ```v1``` and ```v2``` variables (which are called **pis** and **cpf**) to match the workers from one table to another. Because these variables exist in all three tables with the same name (and I didn't rename them for reasons I'll explain later), these columns can be selected in just one of them. So, I selected all the variables of the 2014 table (60 variables) and all the variables **except cpf and pis** from the 2015 and 2016 tables (74 variables each). My query looked something like this: 
 
 ```javascript
 SELECT rais_2014.*,
@@ -206,7 +206,7 @@ FULL OUTER JOIN rais_2016
 ;
 ```
 
-The result I get is all the information from RAIS 2014, RAIS 2015 and RAIS 2016 in just one table. But it's not done just yet: when a match between RAIS 2014 table and RAIS 2015 table or RAIS 2016 table, v1 and v2 are NULL (because they come from RAIS 2014 table). To fix it, I did another update using the original RAIS 2015 and RAIS 2016 tables that looked something like this:
+The result I get is all the information from RAIS 2014, RAIS 2015 and RAIS 2016 in just one table. But it's not done just yet: when a match between RAIS 2014 table and RAIS 2015 table or RAIS 2016 table, ```v1``` and ```v2``` are *NULL* (because they information come from RAIS 2014 table only). To fix it, I did another update using the original RAIS 2015 and RAIS 2016 tables that looked something like this:
 
 ```javascript
 UPDATE rais_2014_2016

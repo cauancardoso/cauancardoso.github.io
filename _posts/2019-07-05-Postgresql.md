@@ -8,7 +8,7 @@ tags: [SQL, Postgresql]
 comments: true
 ---
 
-The **Annual Social Information Report (RAIS)** is a socioeconomic report of the formal work in Brazil. It includes monthly information of admissions, dismissals, medical leaves, salaries and demographic information of the workers. 
+The **Annual Social Information Report (RAIS)** is a socioeconomic report of the formal work in Brazil. It includes monthly information of admissions, dismissals, medical leaves, salaries and demographic information of formal workers. 
 
 The RAIS 2014 has 60 variables and more than 74 million registers; the RAIS 2015 has 76 variables and more than 72 million registers; the RAIS 2016 has 76 variables and more than 67 million registers. Each register represents a job linkage in that year.
 

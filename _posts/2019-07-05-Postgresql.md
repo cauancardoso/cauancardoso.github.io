@@ -88,11 +88,15 @@ WHERE rais_2014_2016.v3_2016 = rais_2016.v3 AND
       rais_2014_2016.v76_2016 = rais_2016.v76 AND  
 ;  
 ```
-Another option to do all this in a single query (with no need to update) is to use a CASE WHEN expression like this: 
+Another option to do all this in a single query (with no need to update) is to use a CASE WHEN expression for ```v1``` and ```v2``` variables like this: 
 
 ```javascript
-SELECT CASE WHEN rais_2014_2015.v1 IS NULL THEN rais_2016.v1 ELSE rais_2014_2015.v1 END AS v1,
-       CASE WHEN rais_2014_2015.v2 IS NULL THEN rais_2016.v2 ELSE rais_2014_2015.v2 END AS v2,
+SELECT CASE WHEN rais_2014_2015.v1 IS NULL THEN rais_2016.v1 
+		ELSE rais_2014_2015.v1 
+       END AS v1,
+       CASE WHEN rais_2014_2015.v2 IS NULL THEN rais_2016.v2 
+     		ELSE rais_2014_2015.v2 
+       END AS v2,
        rais_2014_2015.v3,  
        rais_2014_2015.v4,  
        [...],  
@@ -102,8 +106,12 @@ SELECT CASE WHEN rais_2014_2015.v1 IS NULL THEN rais_2016.v1 ELSE rais_2014_2015
        [...],  
        rais_2016.v76_2016  
 INTO rais_2014_2016  
-FROM (SELECT CASE WHEN rais_2014.v1 IS NULL THEN rais_2015.v1 ELSE rais_2014.v1 END AS v1,
-	     CASE WHEN rais_2014.v2 IS NULL THEN rais_2015.v2 ELSE rais_2014.v2 END AS v2,
+FROM (SELECT CASE WHEN rais_2014.v1 IS NULL THEN rais_2015.v1 
+			ELSE rais_2014.v1 
+	     END AS v1,
+	     CASE WHEN rais_2014.v2 IS NULL THEN rais_2015.v2 
+	     		ELSE rais_2014.v2 
+	     END AS v2,
 	     rais_2014.v3_2015,  
 	     rais_2014.v4_2015,  
 	     [...],  

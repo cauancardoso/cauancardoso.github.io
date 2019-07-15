@@ -25,7 +25,7 @@ First things first, I used [pgAdmin III](https://www.pgadmin.org/download/) vers
 
 I did a FULL OUTER JOIN of the RAIS 2014-2016 tables, because I wanted to keep all the three tables registers. However, a JOIN cannot be performed in SQL if a variable from one table has the same column name of a variable from another. The 60 variables from RAIS 2014 table are also present in the RAIS 2015 and 2016 tables, hence the column names are the same. **How to deal with that?**
 
-#### Step 1) Change variable names in each dataset
+#### Step 1) Change variable names in each dataset (except for id variables)
 
 Information about name and sex of the worker, that (hopefully) will not change over the years, can be taken from just one table. On the other hand, information about employment will change over the years and is the core of the analysis here. In that case, it will suffice change the name of the variables. I chose something that relate them to the year that information is from. So, I did something like this:
 
@@ -51,19 +51,21 @@ RENAME COLUMN v5 to v5_2016;
 ```
 And so on up to ```v76``` in ```rais_2016``` table.
 
+I didn't rename the ```v1``` and ```v2``` (which are called **pis** and **cpf**) variables because they'll be my id variables to join the three tables.
+
 #### Step 2) FULL OUTER JOIN using a subquery and CASE WHEN
 
-I used the ```v1``` and ```v2``` variables (which are called **pis** and **cpf**) to match the workers from one table to another. Because these variables exist in all three tables with the same name (and I didn't rename them for reasons I'll explain later), these columns can't be selected in more than one table. So, I selected all the variables of the 2014 table (60 variables) and all the variables **except cpf and pis** from the 2015 and 2016 tables (74 variables each). For these two, I use a CASE WHEN expression to join all the values from the three tables of ```v1``` into a single column and the same with ```v2```.
+I used the ```v1``` and ```v2``` variables to match the workers from one table to another. Because these variables exist in all three tables with the same name (and I didn't rename them to keep only two columns as id variables in the final table), these columns can't be selected in more than one table. So, I selected all the variables **except pis and cpf** (```v1``` and ```v2```) from the 2014, 2015 and 2016 tables (58, 74 and 74 variables respectvely). For these two, I use a CASE WHEN expression to join all the values from the three tables of ```v1``` into a single column and the same with ```v2```, keeping the same name for each.
 
 My query looked something like this: 
 
 ```javascript
 SELECT CASE WHEN rais_2014_2015.v1 IS NULL THEN rais_2016.v1 
 		ELSE rais_2014_2015.v1 
-       END AS v1,
+       END AS v1, /* keep the same name */  
        CASE WHEN rais_2014_2015.v2 IS NULL THEN rais_2016.v2 
      		ELSE rais_2014_2015.v2 
-       END AS v2,
+       END AS v2, /* keep the same name */  
        rais_2014_2015.v3,  
        rais_2014_2015.v4,  
        [...],  
@@ -75,9 +77,9 @@ SELECT CASE WHEN rais_2014_2015.v1 IS NULL THEN rais_2016.v1
 INTO rais_2014_2016  
 FROM (SELECT CASE WHEN rais_2014.v1 IS NULL THEN rais_2015.v1 
 			ELSE rais_2014.v1 
-	     END AS v1,
+	     END AS v1, /* keep the same name */  
 	     CASE WHEN rais_2014.v2 IS NULL THEN rais_2015.v2 
-	     		ELSE rais_2014.v2 
+	     		ELSE rais_2014.v2 /* keep the same name */  
 	     END AS v2,
 	     rais_2014.v3_2015,  
 	     rais_2014.v4_2015,  

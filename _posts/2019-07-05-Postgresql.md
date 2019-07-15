@@ -29,9 +29,18 @@ I did a FULL OUTER JOIN of the RAIS 2014-2016 tables, because I wanted to keep a
 
 Information about name and sex of the worker, that (hopefully) will not change over the years, can be taken from just one table. On the other hand, information about employment will change over the years and is the core of the analysis here. In that case, it will suffice change the name of the variables. I chose something that relate them to the year that information is from. So, I did something like this:
 
-For simplification purposes, I'm calling the RAIS 2015 and 2016 variables **v1**, **v2**, **v3**, ... and **v76**
+For simplification purposes, I'm calling the RAIS variables **v1**, **v2**, **v3**, ... and **v76**
 {: .box-note}
 
+```javascript
+ALTER TABLE rais_2014  
+RENAME COLUMN v3 to v3_2014;  
+ALTER TABLE rais_2014  
+RENAME COLUMN v4 to v4_2014;  
+ALTER TABLE rais_2014  
+RENAME COLUMN v5 to v5_2014;  
+```
+And so on up to ```v60``` in ```rais_2014``` table...
 ```javascript
 ALTER TABLE rais_2015
 RENAME COLUMN v3 to v3_2015;
@@ -51,7 +60,9 @@ RENAME COLUMN v5 to v5_2016;
 ```
 And so on up to ```v76``` in ```rais_2016``` table.
 
-I didn't rename the ```v1``` and ```v2``` (which are called **pis** and **cpf**) variables because they'll be my id variables to join the three tables.
+This will be useful to know in the final table from which year each variable came from.
+
+I didn't rename the ```v1``` and ```v2``` variables (which are called **pis** and **cpf**) because they'll be my id variables, which I'll use to join the three tables into a single table.
 
 #### Step 2) FULL OUTER JOIN using a subquery and CASE WHEN
 
@@ -103,7 +114,7 @@ Notice that [I use a subquery](https://www.techonthenet.com/postgresql/subquerie
 
 ### Conclusion
 
-Now I have a single table for 3 consecutive years and only two columns as id variables (```v1``` and ```v2```) that I can use to merge with others datasets that also have these id variables, e.g. **Cadastro Único**, **Caged**, **Seguro Desemprego** and many others Brazilian administrative registers.
+Now I have a single table for 3 consecutive years with 208 columns and only two of them as id variables (```v1``` and ```v2```) that I can use to merge with others datasets that also have these id variables, e.g. **Cadastro Único**, **Caged**, **Seguro Desemprego** and many others Brazilian administrative registers.
 
 If you want to learn more about the different ways you can JOIN tables in SQL, [see this very instructed document created by Steve Stedman](http://stevestedman.com/wp-content/uploads/TSqlJoinTypePoster1.pdf).
 

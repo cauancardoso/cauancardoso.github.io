@@ -59,9 +59,10 @@ FROM (SELECT rais_2014.*,
 	     rais_2015.v4_2015,  
 	     [...],  
 	     rais_2015.v76_2015  
-	FULL OUTER JOIN rais_2015  
-		USING (v1, v2)  
-	) rais_2014_2015  
+       FROM rais_2014  
+       FULL OUTER JOIN rais_2015  
+       		USING (v1, v2)  
+       ) rais_2014_2015  
 FULL OUTER JOIN rais_2016  
 	USING (v1, v2)  
 ;
@@ -120,9 +121,10 @@ FROM (SELECT CASE WHEN rais_2014.v1 IS NULL THEN rais_2015.v1
 	     rais_2015.v4_2015,  
 	     [...],  
 	     rais_2015.v76_2015  
-	FULL OUTER JOIN rais_2015  
-		USING (v1, v2)  
-	) rais_2014_2015  
+       FROM rais_2014  
+       FULL OUTER JOIN rais_2015    
+       		USING (v1, v2)  
+       ) rais_2014_2015  
 FULL OUTER JOIN rais_2016  
 	USING (v1, v2)  
 ;

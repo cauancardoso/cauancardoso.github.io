@@ -22,7 +22,9 @@ description: Cauan Cardoso personal website
 navbar-links:
   About Me: "aboutme"
   Production:
-    - Bibliographical Production: "publications"
+    - Articles in scientific journals: "articles"
+    - Publications in proceedings of conferences: "proceedings"
+    - Presentation of works: "presentations"
     - Awards: "awards"
   CV: "https://public.tableau.com/profile/cauan.cardoso#!/vizhome/CV_15638506371700/CV"
 

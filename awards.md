@@ -3,7 +3,7 @@ layout: page
 title: Awards
 ---
 
-### 2019
+### 2018
 **I Prêmio Conhecendo a Vulnerabilidade Social em Pernambuco**  
 *Fundação Joaquim Nabuco (Fundaj)*  
 Paper: [Transformação da Estrutura Etária e Desafios para o Desenvolvimento Humano em Pernambuco: uma análise do Índice de Vulnerabilidade Social da Região Metropolitana do Recife](https://periodicos.fundaj.gov.br/CIC/article/view/1825/1479)

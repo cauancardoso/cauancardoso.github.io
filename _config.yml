@@ -24,7 +24,7 @@ navbar-links:
   Production:
     - Bibliographical Production: "publications"
     - Awards: "awards"
-  CV: "http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4388692P1&idiomaExibicao=2"
+  CV: "https://public.tableau.com/profile/cauan.cardoso#!/vizhome/CV_15638506371700/CV"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar

@@ -10,6 +10,11 @@ comments: true
 
 [There are plenty of ways to remove duplicates using SAS](https://support.sas.com/resources/papers/proceedings17/0188-2017.pdf). Here I show how I've done it when I was working with the Unemployment Insurance administrative registers of the Ministry of Economy in Brazil.
 
+First things first, I used [SAS](https://www.sas.com/en_us/home.html) version 9.3 to this project.
+
+**SAS version:** 9.3  
+{: .box-note}
+
 ### Create a token variable
 The first step is to create a token variable equals to 1.
 

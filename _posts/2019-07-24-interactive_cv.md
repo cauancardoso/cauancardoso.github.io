@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to create an interactive Resume
+title: How to create an Interactive Resume
 subtitle: Enhance your Resume using Tableau
 gh-repo: cauancardoso/cauancardoso.github.io
 gh-badge: [star, fork, follow]

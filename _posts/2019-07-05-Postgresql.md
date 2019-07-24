@@ -8,13 +8,13 @@ tags: [SQL, Postgresql]
 comments: true
 ---
 
+Here I will show very briefly how I've managed to join the RAIS 2014, 2015 and 2016 datasets into a single dataset using [PostgreSQL](https://www.postgresql.org/) as a way to create monthly employment entry and exit rates in the 2014-2016 period.
+
 ### About RAIS
 
 The **Annual Social Information Report (RAIS)** is a socioeconomic report of the formal work in Brazil. It includes monthly information of admissions, dismissals, medical leaves, salaries and demographic information of formal workers. 
 
 The RAIS 2014 has 60 variables and more than 74 million registers; the RAIS 2015 has 76 variables and more than 72 million registers; the RAIS 2016 has 76 variables and more than 67 million registers. Each register represents a job linkage in that year.
-
-Here I will show very briefly how I've managed to join the RAIS 2014, 2015 and 2016 datasets into a single dataset using [PostgreSQL](https://www.postgresql.org/) as a way to create monthly employment entry and exit rates in the 2014-2016 period.
 
 ### Join three tables in two steps
 

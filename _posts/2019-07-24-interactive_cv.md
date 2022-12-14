@@ -8,7 +8,7 @@ tags: [Tableau, Excel]
 comments: true
 ---
 
-[I've created my Interactive Résumé (or Curriculum Vitae) using Tableau](https://public.tableau.com/profile/cauan.cardoso#!/vizhome/CV_15638506371700/CV). Here I'll show how you can create your own one.
+[I've created my Interactive Résumé (or Curriculum Vitae) using Tableau](https://public.tableau.com/profile/cauan.cardoso#!/vizhome/CV_15638506371700/CV). Here I'll show how you can create yours.
 
 [Tableau](https://www.tableau.com/) is a very intuitive software that creates amazing dashboards ([and more](https://www.tableau.com/#hero-video)). It's not cheap, but if you're a student like me, I have great news: [Tableau is free for students](https://www.tableau.com/academic).
 
